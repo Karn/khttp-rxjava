@@ -1,0 +1,40 @@
+group = 'io.karn'
+version = '0.0.1'
+
+buildscript {
+    ext {
+        kotlin_version = '1.1.51'
+        rxJava_version = '2.1.10'
+    }
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'kotlin'
+
+
+repositories {
+    jcenter()
+    maven { url 'https://jitpack.io' }
+}
+
+sourceSets {
+    main.kotlin.srcDirs += 'src/main'
+    test.kotlin.srcDirs += 'src/test'
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
+    implementation "io.reactivex.rxjava2:rxjava:$rxJava_version"
+    implementation "com.github.jkcclemens:khttp:-SNAPSHOT"
+
+    testImplementation "junit:junit:4.12"
+}
