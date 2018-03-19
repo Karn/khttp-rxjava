@@ -5,6 +5,7 @@ buildscript {
     ext {
         kotlin_version = '1.1.51'
         rxJava_version = '2.1.10'
+        khttp_hash = '94ddc375f77f6b8b4bffd5415f136fe31fc663ae'
     }
 
     repositories {
@@ -18,7 +19,6 @@ buildscript {
 
 apply plugin: 'kotlin'
 
-
 repositories {
     jcenter()
     maven { url 'https://jitpack.io' }
@@ -30,11 +30,11 @@ sourceSets {
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
     implementation "io.reactivex.rxjava2:rxjava:$rxJava_version"
-    implementation "com.github.jkcclemens:khttp:-SNAPSHOT"
+    implementation "com.github.jkcclemens:khttp:$khttp_hash"
 
     testImplementation "junit:junit:4.12"
 }

@@ -3,7 +3,7 @@ package khttp.extensions
 import khttp.responses.Response
 import org.junit.Test
 
-class RxKHttpSpec {
+class RxKHttpTest {
 
     @Test
     fun getRequest() {
